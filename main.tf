@@ -17,7 +17,7 @@ resource "aws_vpc" "main" {
   }
 }
 resource "aws_subnet" "1subnet" {
-    vpc_id = aws_vpc.Myvpc.vpc_id
+    vpc_id = aws_vpc.main.id
     cidr_block = "20.20.1.0/24"
 
     tags = {
@@ -25,7 +25,7 @@ resource "aws_subnet" "1subnet" {
     }
 }
 resource "aws_subnet" "2subnet" {
-    vpc_id = aws_vpc.Myvpc.vpc_id
+    vpc_id = aws_vpc.main.id
     cidr_block = "20.20.2.0/24"
 
     tags = {
@@ -36,7 +36,7 @@ resource "aws_subnet" "2subnet" {
 resource "aws_instance" "firstec2" {
     ami = data.aws_ami.myami.vpc_id
     instance_type = "t2.micro"
-    subnet_id = aws_subnet.main.id
+
 }
 data "aws_ami" "myami" {
     owners = ["amazon"]
