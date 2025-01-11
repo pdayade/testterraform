@@ -44,6 +44,6 @@ data "aws_ami" "myami" {
 
     filter {
         name = "name"
-        values = ["amzn2-ami-kernal-5.10**"]
+        values = ["amzn2-ami-kernal-5.0**"]
         }
 }
