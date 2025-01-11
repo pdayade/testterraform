@@ -34,16 +34,16 @@ resource "aws_subnet" "2subnet" {
 }
 
 resource "aws_instance" "firstec2" {
-    ami = data.aws_ami.myami.vpc_id
+    ami = "ami-05576a079321f21f8"
     instance_type = "t2.micro"
 
 }
-data "aws_ami" "myami" {
-    owners = ["amazon"]
-    most_recent = true
+# # data "aws_ami" "myami" {
+#     owners = ["amazon"]
+#     most_recent = true
 
-    filter {
-        name = "name"
-        values = ["amzn2-ami-kernal-5.0**"]
-        }
-}
+#     filter {
+#         name = "name"
+#         values = ["amzn2-ami-kernal-5.0**"]
+#         }
+# }
